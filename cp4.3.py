@@ -2,28 +2,33 @@ import random
 import matplotlib.pyplot as plt
 import numpy
 
+# TODO: ADD CLASS AND __init__ 
+
 # This is the main function which tries to integrate everything
 def main():
 
     # I've taken input from user the number of iterations and length of the road
     roadlength = int(input("Enter road length: "))
     numOfiterations = int(input("Enter number of iterations:"))
+    # TODO: ASK THE USER TO INPUT THE CAR DENSITY AND THEN USE IT TO CALCULATE NUMBER OF CARS
+    # NUMBER OF CARS = CAR DENSITY * ROAD LENGTH
+    
     sum = 0
 
     for i in range(roadlength):
-        d = float(i)/(roadlength)
+        d = float(i)/(roadlength) # IDK WHAT THIS DOES REALLY
         for j in range(numOfiterations):
             # this basically adds up all steady counts, then average is taken after loop
             # 'count' and 'random_array' are the functions called. The 'move' function is called inside 'count' function
             sum = sum + count(random_array(roadlength,i))
         # so according to the question avg speed is number of cars moved/total number of cars so....
+        # TODO: AVERAGE SPEED IS "NUMBER OF CARS THAT MOVES DIVIDED BY THE TOTAL CARS." YOU DO NOT NEED THE i INSIDE THE AVG SPEED CALCULATIOM
         avg_speed = sum/(numOfiterations*i)
         plt.plot(avg_speed,d)  
         plt.show()  
 
 # This function returns the steady count(for steady speed)
 def count(generatedarray):
-
     b =0 
     while(True):
         # Move function is called which will return a count
@@ -66,7 +71,7 @@ def random_array(roadsize, numOfcars):
             arr[random_index] = 1
             counter += 1
     return arr        
-            
+
 #This is used to make the program run automatically without any arguments 
 if __name__ == "__main__":
     main()
