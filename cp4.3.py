@@ -67,3 +67,6 @@ def random_array(roadsize, numOfcars):
             counter += 1
     return arr        
             
+#This is used to make the program run automatically without any arguments 
+if __name__ == "__main__":
+    main()
