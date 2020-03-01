@@ -1,5 +1,5 @@
 import random
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import numpy
 
 # This is the main function which tries to integrate everything
